@@ -19,6 +19,7 @@ namespace OrderTracker.Controllers
       return View();
     }
 
+    // Prompt wasn't very clear, this redirect the user to home page/splash page. (I think it should redirect to Vendor List Page.)
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName, string vendorDescription)
     {
