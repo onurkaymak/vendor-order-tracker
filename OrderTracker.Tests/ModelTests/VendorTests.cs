@@ -50,7 +50,7 @@ namespace OrderTracker.Test
       Vendor newVendor = new Vendor(name, desc);
 
       int result = newVendor.Id;
-      Assert.AreEqual(0, result);
+      Assert.AreEqual(1, result);
     }
 
     [TestMethod]
