@@ -13,7 +13,8 @@ namespace OrderTracker.Tests
       string title = "Suzie's Cafe";
       string desc = "20 loaves of bread.";
       float price = 220.50F;
-      Order newOrder = new Order(title, desc, price);
+      string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
+      Order newOrder = new Order(title, desc, price, orderDate);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -23,7 +24,8 @@ namespace OrderTracker.Tests
       string title = "Suzie's Cafe";
       string desc = "20 loaves of bread.";
       float price = 220.50F;
-      Order newOrder = new Order(title, desc, price);
+      string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
+      Order newOrder = new Order(title, desc, price, orderDate);
       Assert.AreEqual(title, newOrder.Title);
     }
 
@@ -33,8 +35,21 @@ namespace OrderTracker.Tests
       string title = "Suzie's Cafe";
       string desc = "20 loaves of bread.";
       float price = 220.50F;
-      Order newOrder = new Order(title, desc, price);
+      string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
+      Order newOrder = new Order(title, desc, price, orderDate);
       Assert.AreEqual(desc, newOrder.Description);
+    }
+
+    [TestMethod]
+    public void GetDate_ReturnsDateOfOrder_String()
+    {
+      string title = "Suzie's Cafe";
+      string desc = "20 loaves of bread.";
+      float price = 220.50F;
+      string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
+      Order newOrder = new Order(title, desc, price, orderDate);
+
+      Assert.AreEqual(desc, newOrder.Date);
     }
   }
 }
