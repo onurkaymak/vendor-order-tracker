@@ -20,10 +20,17 @@ namespace OrderTracker.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string vendorName, string vendorDesc)
+    public ActionResult Create(string vendorName, string vendorDescription)
     {
-      Vendor newVendor = new Vendor(vendorName, vendorDesc);
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Vendor selectedVendor = Vendor.Find(id);
+      return View(selectedVendor);
     }
   }
 }
