@@ -49,7 +49,7 @@ namespace OrderTracker.Tests
       string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
       Order newOrder = new Order(title, desc, price, orderDate);
 
-      Assert.AreEqual(desc, newOrder.Date);
+      Assert.AreEqual(orderDate, newOrder.Date);
     }
   }
 }
