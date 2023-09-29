@@ -70,5 +70,28 @@ namespace OrderTracker.Test
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void AddOrder_AddOrderInOrdersListInVendor_OrderList()
+    {
+      string name1 = "Suzie's Cafe";
+      string desc1 = "Cute small cafe, long term customer.";
+      Vendor newVendor = new Vendor(name1, desc1);
+
+      string title = "Suzie's Cafe";
+      string desc = "20 loaves of bread.";
+      float price = 220.50F;
+      string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
+      Order newOrder = new Order(title, desc, price, orderDate);
+
+      List<Order> newList = new List<Order> { newOrder };
+
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+
+
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

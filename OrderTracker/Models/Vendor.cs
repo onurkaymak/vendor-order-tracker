@@ -8,6 +8,7 @@ namespace OrderTracker.Models
     public string Name { get; set; }
     public string Description { get; set; }
     public int Id { get; }
+    public List<Order> Orders { get; set; }
 
     // need an Orders list to add vendor orders. 
 
@@ -17,6 +18,7 @@ namespace OrderTracker.Models
       Description = desc;
       Id = _instances.Count;
       _instances.Add(this);
+      Orders = new List<Order> { };
     }
 
     public static void ClearAll()
@@ -27,6 +29,11 @@ namespace OrderTracker.Models
     public static List<Vendor> GetAll()
     {
       return _instances;
+    }
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
     }
   }
 }
