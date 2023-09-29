@@ -11,22 +11,25 @@
   </head>
   <body>
     @using OrderTracker.Models;
-
+      <h1>@Model.Name</h1>
       @if(@Model.Orders.Count == 0)
       {
         <p>There is no order at this moment for <strong>@Model.Name</strong>.</p>
       }
       else
       {
-      <ul>
+      
         @foreach (Order order in @Model.Orders)
         {
-          <h1>@order.Title</h1>
+          <br>
+          <h3>Order: @order.Id</h3>
+          <ul>
           <li>@order.Description</li>
           <li>@order.Date</li>
           <li>$ @order.Price</li>
+          </ul> 
+          <br>
         }
-      </ul>
       }
 
     <a href='/vendors/@Model.Id/new'>Create new Order</a>
