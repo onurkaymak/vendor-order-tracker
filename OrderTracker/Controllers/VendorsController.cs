@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using OrderTracker.Models;
+using System;
 
 namespace OrderTracker.Controllers
 {
@@ -32,6 +33,19 @@ namespace OrderTracker.Controllers
     {
       Vendor selectedVendor = Vendor.Find(id);
       return View(selectedVendor);
+    }
+
+    // Creates new order for selected Vendor.
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult CreateV(int vendorId, string title, string description, float price)
+    {
+      Vendor selectedVendor = Vendor.Find(vendorId);
+      string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
+
+      Order newOrder = new Order(title, description, 15, orderDate);
+      selectedVendor.AddOrder(newOrder);
+
+      return RedirectToAction("Show", new { id = vendorId });
     }
   }
 }
