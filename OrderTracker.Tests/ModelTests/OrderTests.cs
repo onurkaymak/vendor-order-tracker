@@ -5,8 +5,13 @@ using System;
 namespace OrderTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -50,6 +55,19 @@ namespace OrderTracker.Tests
       Order newOrder = new Order(title, desc, price, orderDate);
 
       Assert.AreEqual(orderDate, newOrder.Date);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      string title = "Suzie's Cafe";
+      string desc = "20 loaves of bread.";
+      float price = 220.50F;
+      string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
+      Order newOrder = new Order(title, desc, price, orderDate);
+
+      int result = newOrder.Id;
+      Assert.AreEqual(1, result);
     }
   }
 }
