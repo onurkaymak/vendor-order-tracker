@@ -14,6 +14,17 @@ namespace OrderTracker.Models
       Name = vendorName;
       Description = desc;
       Id = _instances.Count;
+      _instances.Add(this);
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
     }
   }
 }
