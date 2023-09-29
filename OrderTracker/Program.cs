@@ -24,17 +24,6 @@ namespace OrderTracker
         pattern: "{controller=Home}/{action=Index}/{id?}"
       );
 
-
-      //// To Vendor routes, created default vendors
-      string name1 = "Suzie's Cafe";
-      string desc1 = "Cute small cafe, long term customer.";
-
-      string name2 = "Salt & Straw";
-      string desc2 = "Best ice cream in Portland, they get pastries from us.";
-
-      Vendor newVendor1 = new Vendor(name1, desc1);
-      Vendor newVendor2 = new Vendor(name2, desc2);
-
       app.Run();
     }
   }
