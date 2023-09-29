@@ -19,20 +19,15 @@
       else
       {
       
-        @foreach (Order order in @Model.Orders)
-        {
-          <br>
-          <h3>Order: @order.Id</h3>
-          <ul>
-          <li>@order.Description</li>
-          <li>@order.Date</li>
-          <li>$ @order.Price</li>
-          </ul> 
-          <br>
-        }
+    <ul>
+    @foreach (Order order in @Model.Orders)
+    {
+      <li><h4><a href="/vendors/@Model.Id/orders/@order.Id">Order - @order.Id</a></h4></li>
+    }
+    </ul>
       }
 
-    <a href='/vendors/@Model.Id/new'>Create new Order</a>
+    <a href='/vendors/@Model.Id/orders/new'>Create new Order</a>
     <br>
     <a href='/vendors'>Back to Vendors List</a>
   </body>
