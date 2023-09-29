@@ -12,7 +12,8 @@ namespace OrderTracker.Tests
     {
       string title = "Suzie's Cafe";
       string desc = "20 loaves of bread.";
-      Order newOrder = new Order(title, desc);
+      float price = 220.50F;
+      Order newOrder = new Order(title, desc, price);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -21,16 +22,18 @@ namespace OrderTracker.Tests
     {
       string title = "Suzie's Cafe";
       string desc = "20 loaves of bread.";
-      Order newOrder = new Order(title, desc);
+      float price = 220.50F;
+      Order newOrder = new Order(title, desc, price);
       Assert.AreEqual(title, newOrder.Title);
     }
 
     [TestMethod]
-    public void GetDesc_ReturnsDescOfOrder_String()
+    public void GetPrice_ReturnsPriceOfOrder_Float()
     {
       string title = "Suzie's Cafe";
       string desc = "20 loaves of bread.";
-      Order newOrder = new Order(title, desc);
+      float price = 220.50F;
+      Order newOrder = new Order(title, desc, price);
       Assert.AreEqual(desc, newOrder.Description);
     }
   }
