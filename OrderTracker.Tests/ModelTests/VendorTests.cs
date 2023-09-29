@@ -89,9 +89,23 @@ namespace OrderTracker.Test
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
 
-
-
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsSelectedVendor_Vendor()
+    {
+      string name1 = "Suzie's Cafe";
+      string desc1 = "Cute small cafe, long term customer.";
+      Vendor newVendor = new Vendor(name1, desc1);
+
+      string name2 = "Salt & Straw";
+      string desc2 = "Best ice cream in Portland, they get pastries from us.";
+      Vendor newVendor2 = new Vendor(name2, desc2);
+
+      Vendor result = Vendor.Find(2);
+
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }
