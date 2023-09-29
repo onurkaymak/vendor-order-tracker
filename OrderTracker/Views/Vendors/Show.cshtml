@@ -11,7 +11,7 @@
   </head>
   <body>
     @using OrderTracker.Models;
-    
+
       @if(@Model.Orders.Count == 0)
       {
         <p>There is no order at this moment for <strong>@Model.Name</strong>.</p>
@@ -28,6 +28,9 @@
         }
       </ul>
       }
-    <p><a href='/vendors'>Back to Vendors List</a></p>
+
+    <a href='/vendors/@Model.Id/new'>Create new Order</a>
+    <br>
+    <a href='/vendors'>Back to Vendors List</a>
   </body>
 </html>
