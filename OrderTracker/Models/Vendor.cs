@@ -9,6 +9,8 @@ namespace OrderTracker.Models
     public string Description { get; set; }
     public int Id { get; }
 
+    // need an Orders list to add vendor orders. 
+
     public Vendor(string vendorName, string desc)
     {
       Name = vendorName;
