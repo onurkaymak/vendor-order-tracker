@@ -42,7 +42,7 @@ namespace OrderTracker.Controllers
       Vendor selectedVendor = Vendor.Find(vendorId);
       string orderDate = DateTime.Now.ToString("dd/MM/yyyy");
 
-      Order newOrder = new Order(title, description, 15, orderDate);
+      Order newOrder = new Order(title, description, price, orderDate);
       selectedVendor.AddOrder(newOrder);
 
       return RedirectToAction("Show", new { id = vendorId });
