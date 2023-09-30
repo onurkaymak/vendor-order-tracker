@@ -1,6 +1,6 @@
-# Order Tracker
+# Vendor and Order Tracker
 
-#### An application to track orders for vendors.
+#### An ASP.NET Core MVC application to track orders for multiple vendors.
 
 #### By [Onur Kaymak](https://onurkaymak.com)
 
@@ -8,25 +8,26 @@
 
 - C#
 - .NET 6
+- Razor
 - NuGet
 - MSTEST
 - VS Code
 
 ## Description
 
-An independent C#/.NET project assignment for [Epicodus](https://www.epicodus.com/), project is about "Test-Driven Development with C#".
+An independent C# / ASP .NET project assignment for [Epicodus](https://www.epicodus.com/), project is about "Basic Web Applications with C#".
+
+## Important
+
+- This project requires [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ## Setup/Installation Requirements
-
-### Requires
-
-.NET 6 - [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/5.0).
 
 - Clone this project from the provided GitHub repository: [Repository Link](https://github.com/onurkaymak/vendor-order-tracker).
 
 - Navigate into the project's folder in your terminal.
 
-- Navigate into folder called "OrderTracker" in your terminal.
+- Navigate into OrderTracker directory in your terminal.
 
 - Type `$ dotnet run` in the terminal command line to compile and execute this application on your console.
 
@@ -34,7 +35,7 @@ An independent C#/.NET project assignment for [Epicodus](https://www.epicodus.co
 
 ## Testing with MSTEST
 
-- Navigate into Bakery.Tests from the project root directory.
+- Navigate into OrderTracker.Tests directory from the project root directory.
 
 - Type `$ dotnet test` in command line to run the tests.
 
